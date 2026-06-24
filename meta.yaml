@@ -1,0 +1,15 @@
+artifact_uri: file:///content/drive/MyDrive/SICIP/final-project/mlruns/728964325546990735/c8fe74af0789450e844c9851760c3733/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '728964325546990735'
+lifecycle_stage: active
+run_id: c8fe74af0789450e844c9851760c3733
+run_name: YOLOv8m_25_Epochs
+run_uuid: c8fe74af0789450e844c9851760c3733
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1782276437252
+status: 1
+tags: []
+user_id: root

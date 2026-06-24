@@ -1,0 +1,20 @@
+services:
+  mlflow-ui:
+    image: python:3.10-slim
+    ports:
+      - "5001:5000"
+    volumes:
+      - ./mlruns:/app/mlruns
+    working_dir: /app
+    command: >
+      bash -c "pip install mlflow && mlflow server --host 0.0.0.0 --port 5000 --backend-store-uri ./mlruns"
+
+  anpr-app:
+    build: .
+    ports:
+      - "7861:7860"
+    volumes:
+      - ./models:/app/models
+      - ./mlruns:/app/mlruns
+    depends_on:
+      - mlflow-ui

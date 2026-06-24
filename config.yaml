@@ -1,0 +1,26 @@
+project_name: "Bangladeshi_ANPR_M4"
+random_seed: 42
+
+data:
+  hf_dataset_url: "keremberke/license-plate-object-detection"
+  hf_version: "full"
+  local_data_dir: "data/"
+  ocr_eval_csv: "data/ocr_eval_subset.csv"
+
+yolo:
+  model_type: "yolov8m.pt"
+  batch_size: 16
+  image_size: 640
+  learning_rate: 0.01
+  optimizer: "auto"
+  device: "mps" 
+  runs:
+    run_1: { epochs: 10 }
+    run_2: { epochs: 25 }
+    run_3: { epochs: 35 }
+
+ocr:
+  languages: ['bn', 'en']
+  upscale_factor: 2
+  apply_grayscale: true
+  apply_thresholding: true
